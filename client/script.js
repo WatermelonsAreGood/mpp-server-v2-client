@@ -2934,7 +2934,7 @@ $(function () {
     function submit() {
       var msg = { m: "siteban" };
 
-      msg.id = $("#siteban .text[name=id]").val();
+      msg._id = $("#siteban .text[name=id]").val();
 
       var durationUnit = $("#siteban select[name=durationUnit]").val();
       if (durationUnit === "permanent") {
