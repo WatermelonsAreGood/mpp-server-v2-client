@@ -1365,10 +1365,10 @@ $(function () {
   }
 
   var wssport = 8443;
-  if (window.location.hostname === "localhost") {
-    var gClient = new Client("ws://localhost:8443");
+  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+    var gClient = new Client("ws://"+location.hostname);
   } else {
-    var gClient = new Client('wss://mppclone.com:8443');
+    var gClient = new Client("wss://"+location.hostname);
   }
   if (loginInfo) {
     gClient.setLoginInfo(loginInfo);
