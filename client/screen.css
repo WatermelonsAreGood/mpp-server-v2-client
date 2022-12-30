@@ -1003,6 +1003,11 @@ input[type="range"]:hover {
     margin-top: -200px;
 }
 
+#tagging {
+    height: 120px;
+    margin-top: -75px;
+}
+
 #account {
     height: 300px;
     margin-top: -150px;
