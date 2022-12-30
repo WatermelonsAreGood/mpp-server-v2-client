@@ -816,7 +816,7 @@ $(function () {
           keyName = keyName.replace("F#", "G♭");
           keyName = keyName.replace("G#", "A♭");
           keyName = keyName.replace("A#", "B♭");
-  
+
           this.ctx.fillText(keyName, x + ((key.sharp ? this.blackKeyWidth : this.whiteKeyWidth) / 2), y + (key.sharp ? this.blackKeyHeight : this.whiteKeyHeight) - 10 - this.ctx.lineWidth);
         }
 
@@ -1308,10 +1308,10 @@ $(function () {
   }
 
   var wssport = 8443;
-  if (window.location.hostname === "localhost") {
-    var gClient = new Client("ws://localhost:8443");
+  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+    var gClient = new Client("ws://"+location.hostname);
   } else {
-    var gClient = new Client('wss://mppclone.com');
+    var gClient = new Client("wss://"+location.hostname);
   }
   if (loginInfo) {
     gClient.setLoginInfo(loginInfo);
@@ -1817,7 +1817,7 @@ $(function () {
     $("#piano").show();
   }
 
-  // Hide chat attribute 
+  // Hide chat attribute
   if (gHideChat) {
     $("#chat").hide();
   } else {
@@ -3554,7 +3554,7 @@ $(function () {
 
           function showConnections(sticky) {
             //if(document.getElementById("Notification-MIDI-Connections"))
-            //sticky = 1; // todo: instead, 
+            //sticky = 1; // todo: instead,
             var inputs_ul = document.createElement("ul");
             if (midi.inputs.size > 0) {
               var inputs = midi.inputs.values();
@@ -3746,7 +3746,7 @@ $(function () {
 
     get pressSustain() { return pressSustain },
     set pressSustain(func) { pressSustain = func },
-    
+
     get releaseSustain() { return releaseSustain },
     set releaseSustain(func) { releaseSustain = func },
 
@@ -4225,7 +4225,7 @@ $(function () {
 
         const label = document.createElement("label");
         label.innerText = labelText + ": ";
-          
+
         label.appendChild(setting);
         html.appendChild(label);
         if (addBr) html.appendChild(document.createElement("br"));
@@ -4237,9 +4237,9 @@ $(function () {
         for (let index = 0; index < tablinks.length; index++) {
           tablinks[index].className = tablinks[index].className.replace(" active", "");
         }
-        
+
         evt.currentTarget.className += " active";
-        
+
         switch (tabName.toLowerCase()) {
           case "chat":
             var html = document.createElement("div");
@@ -4277,7 +4277,7 @@ $(function () {
 
             content.appendChild(html);
             break;
-        
+
           case "midi":
             var html = document.createElement("div");
 
@@ -4328,7 +4328,7 @@ $(function () {
             option.value = option.innerText = "None";
             option.selected = !gHighlightScaleNotes;
             setting.appendChild(option);
-    
+
             for (const key of keys) {
               const option = document.createElement('option');
               option.value = key;
@@ -4336,7 +4336,7 @@ $(function () {
               option.selected = key === gHighlightScaleNotes;
               setting.appendChild(option);
             }
-    
+
             if (gHighlightScaleNotes) {
               setting.value = gHighlightScaleNotes;
             }
@@ -4359,7 +4359,7 @@ $(function () {
               gNoPreventDefault = !gNoPreventDefault;
               localStorage.noPreventDefault = noPreventDefault;
             });
-            
+
             createSetting("force-dark-background", "Force dark background", gNoBackgroundColor, true, html, () => {
               gNoBackgroundColor = !gNoBackgroundColor;
               localStorage.noBackgroundColor = gNoBackgroundColor;
@@ -4409,7 +4409,7 @@ $(function () {
             break;
         }
       }
-    
+
       changeClientSettingsTab({currentTarget: document.getElementsByClassName("client-settings-tablink")[0]}, "Chat");
     }
   })();
