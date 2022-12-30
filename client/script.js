@@ -2438,6 +2438,15 @@ $(function () {
             }, 100);
           });
       }
+      if(gClient.permissions.tagging) {
+        $('<div class="menu-item tagging">Add/Remove Tag</div>').appendTo(menu)
+        .on("mousedown touchstart", function (evt) {
+          openModal("#tagging");
+          setTimeout(function () {
+            $("#tagging input[name=id]").val(part._id);
+          }, 100);
+        });
+      }
       if (gClient.permissions.usersetOthers) {
         $('<div class="menu-item set-color">Set Color</div>').appendTo(menu)
           .on("mousedown touchstart", function (evt) {
@@ -3015,7 +3024,23 @@ $(function () {
 
 
 
+  //tag add
+  (function () {
+    function submit() {
+      var msg = { m: "tag", tag: {} };
 
+      msg._id = $("#tagging .text[name=id]").val();
+      msg.tag.color = $("#tagging .text[name=tagColor]").val();
+      msg.tag.text = $("#tagging .text[name=tagText]").val();
+      msg.remove = $("#tagging input[name=tagRemove]").is(":checked")
+
+      closeModal();
+      gClient.sendArray([msg]);
+    };
+    $("#tagging .submit").click(function (evt) {
+      submit();
+    });
+  })();
 
 
 
