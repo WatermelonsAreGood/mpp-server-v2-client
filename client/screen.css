@@ -40,12 +40,12 @@ body {
 a {
     cursor: pointer;
     color: #f46;
-    transition: color .25s;
+    transition: color .50s;
 }
 
 a:hover {
     color: #e05;
-    transition: color .25s;
+    transition: color .50s;
 }
 
 .link {
@@ -448,14 +448,15 @@ input[type="range"]:hover {
 
 #room {
     position: absolute;
-    left: 0;
+    left: 10px;
     top: 0;
     padding: 5px;
     width: 240px;
     height: 12px;
-    background: #444;
-    border: 1px solid #ccc;
+    background: #222;
+    border: 1px solid #333;
     cursor: pointer;
+    border-radius: 2px;
     margin: 4px 24px;
     font-size: 12px;
 }
@@ -508,8 +509,8 @@ input[type="range"]:hover {
     width: 100%;
     overflow: hidden;
     overflow-y: scroll;
-    background: #444;
-    border: 1px solid #ccc;
+	background: #111;
+    border: 1px solid #555;
     max-height: 600px;
 }
 
@@ -521,28 +522,26 @@ input[type="range"]:hover {
 }
 
 #room .more .info:hover {
-    background: #666;
+    background: #555;
 }
 
 #room .more .new {
-    background: #111;
+    background: #333;
 }
 
 #room .more .new:hover {
-    background: #333;
+    background: #444;
 }
 
 .ugly-button {
     height: 12px;
     font-size: 12px;
-    background: #111;
-    border: 1px solid #444;
+    background: #222;
+    border: 1px solid #333;
     padding: 5px;
     cursor: pointer;
     line-height: 12px;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
+    border-radius: 8px;
     width: 100px;
     overflow: hidden;
     white-space: nowrap;
@@ -689,7 +688,7 @@ input[type="range"]:hover {
 #volume-slider {
     width: 100%;
     height: 100%;
-    background: url(/volume3.png) no-repeat;
+    background: url(/volume2.png) no-repeat;
     background-position: 50% 50%;
     -webkit-appearance: none;
     -moz-box-shadow: none;
@@ -914,8 +913,8 @@ input[type="range"]:hover {
 #modal .bg {
     width: 100%;
     height: 100%;
-    background: #48a;
-    opacity: .5;
+    background: black;
+    opacity: .4;
     position: absolute;
     left: 0;
     top: 0;
@@ -971,15 +970,8 @@ input[type="range"]:hover {
     color: #000;
     text-shadow: #444 2px 2px 2px;
     border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     box-shadow: inset 0 0 4px #000;
-    -webkit-box-shadow: inset 0 0 4px #000;
-    -moz-box-shadow: inset 0 0 4px #000;
-    transition: all .25s;
-    -webkit-transition: all .25s;
-    -moz-transition: all .25s;
-    -o-transition: all .25s;
+    transition: all .50s;
     position: absolute;
     bottom: -10px;
     right: -10px;
@@ -987,10 +979,7 @@ input[type="range"]:hover {
 
 .dialog .submit:hover {
     background: #ff8;
-    transition: all .25s;
-    -webkit-transition: all .25s;
-    -moz-transition: all .25s;
-    -o-transition: all .25s;
+    transition: all .50s;
 }
 
 #room-settings {
@@ -1193,7 +1182,7 @@ input[type="range"]:hover {
 }
 
 #chat.chatting {
-    background: rgba(64,80,80,.75);
+    background: rgb(0 0 0 / 90%);
     border-radius: 5px;
     box-shadow: 1px 1px 5px #888;
     transition: all .1s;
@@ -1227,7 +1216,7 @@ input[type="range"]:hover {
     border-radius: 5px;
     border: 1px solid #abb;
     cursor: pointer;
-    transition: all .25s;
+    transition: all .50s;
     box-shadow: 1px 1px 8px #bb9;
     color: #788;
     text-shadow: none;
@@ -1238,7 +1227,7 @@ input[type="range"]:hover {
 #social #more-button:hover {
     color: #899;
     background-color: #e8f8f0;
-    transition: background-color .25s;
+    transition: background-color .50s;
 }
 
 #social .fb-like {
@@ -1281,12 +1270,12 @@ input[type="range"]:hover {
     width: 33%;
     float: left;
     background: #cdd;
-    transition: background .25s;
+    transition: background .50s;
 }
 
 #more .items .item:hover {
     background: #d0e0e0;
-    transition: background .25s;
+    transition: background .50s;
 }
 
 #more .items .item .content {
@@ -1435,25 +1424,6 @@ input[type="range"]:hover {
     z-index: 200;
     width: 26px;
     padding: 0;
-}
-
-.mppcommunity-button {
-    right: 6px;
-}
-
-.discord-button {
-    right: 36px;
-}
-
-.reddit-button {
-    right: 66px;
-}
-
-.mpp-rules-button {
-    position: fixed;
-    right: 6px;
-    top: 32px;
-    z-index: 200;
 }
 
 code {
