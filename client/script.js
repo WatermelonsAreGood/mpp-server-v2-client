@@ -3318,6 +3318,8 @@ $(function () {
           }
         }
 
+        if(msg.p.tag) liString += '<span class="nametag" style="float:none;"/>'
+
         if (isSpecialDm) {
           if (gShowIdsInChat) liString += '<span class="id"/>';
           liString += '<span class="name"/><span class="dmArrow"/>';
@@ -3366,7 +3368,14 @@ $(function () {
           }
           else return match;
         });
-
+        
+        
+        if(msg.p.tag) {
+          li.find(".nametag").css("background-color", msg.p.tag.color);
+          li.find(".nametag").css("color", "#ffffff");
+          li.find(".nametag").text(msg.p.tag.text);
+        }
+        
         //apply names, colors, ids
         li.find(".message").html(marked.parseInline(message));
 
