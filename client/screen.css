@@ -1096,6 +1096,7 @@ input[type="range"]:hover {
 }
 
 #chat li {
+    margin: 2px;
     padding: 2px;
     opacity: 0;
 }
