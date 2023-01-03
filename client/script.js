@@ -3261,8 +3261,10 @@ $(function () {
           }
         }
 
-        if(msg.p.tag) liString += '<span class="nametag" style="float:none;"/>'
-
+        if(msg.m === "a") {
+          if(msg.p.tag) liString += '<span class="nametag" style="float:none;"/>'
+        }
+        
         if (isSpecialDm) {
           if (gShowIdsInChat) liString += '<span class="id"/>';
           liString += '<span class="name"/><span class="dmArrow"/>';
@@ -3311,10 +3313,12 @@ $(function () {
         });
         
         
-        if(msg.p.tag) {
-          li.find(".nametag").css("background-color", msg.p.tag.color);
-          li.find(".nametag").css("color", "#ffffff");
-          li.find(".nametag").text(msg.p.tag.text);
+        if(msg.m === "a") {
+          if(msg.p.tag) {
+            li.find(".nametag").css("background-color", msg.p.tag.color);
+            li.find(".nametag").css("color", "#ffffff");
+            li.find(".nametag").text(msg.p.tag.text);
+          }
         }
         
         //apply names, colors, ids
